@@ -14,6 +14,7 @@ from .structure3d import Structured3DDataset
 from .semantic_kitti import SemanticKITTIDataset
 from .nuscenes import NuScenesDataset
 from .waymo import WaymoDataset
+from .rail3d import Rail3DDataset
 
 # object
 from .modelnet import ModelNetDataset
