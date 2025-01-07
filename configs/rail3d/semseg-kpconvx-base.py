@@ -77,7 +77,7 @@ scheduler = dict(type="OneCycleLR",
 
 # dataset settings
 dataset_type = "Rail3DDataset"
-data_root = "/home/milo/pointclouds/data"
+data_root = "data/rail3d"
 
 data = dict(
     num_classes=8,
@@ -140,7 +140,7 @@ data = dict(
                  grid_size=0.02, 
                  hash_type="fnv", 
                  mode="train", 
-                 keys=("coord", "color", "normal", "segment"),
+                 keys=("coord", "segment"),#  keys=("coord", "color", "normal", "segment"),
                  return_min_coord=True),
             # dict(type="SphereCrop", point_max=1000000, mode="center"),
             dict(type="CenterShift", apply_z=False),

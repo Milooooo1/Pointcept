@@ -43,6 +43,9 @@ class Point(Dict):
             self["batch"] = offset2batch(self.offset)
         elif "offset" not in self.keys() and "batch" in self.keys():
             self["offset"] = batch2offset(self.batch)
+        # Use coord as feat if feat is not provided
+        if "feat" not in self.keys() and "coord" in self.keys():
+            self["feat"] = self.coord
 
     def serialization(self, order="z", depth=None, shuffle_orders=False):
         """
@@ -112,6 +115,7 @@ class Point(Dict):
 
         pad: padding sparse for sparse shape.
         """
+        print(self.keys)
         assert {"feat", "batch"}.issubset(self.keys())
         if "grid_coord" not in self.keys():
             # if you don't want to operate GridSampling in data augmentation,

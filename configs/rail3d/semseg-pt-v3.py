@@ -66,10 +66,10 @@ param_dicts = [dict(keyword="block", lr=0.0006)]
 
 # dataset settings
 dataset_type = "Rail3DDataset"
-data_root = "/home/milo/pointclouds/data"
+data_root = "data/rail3d"
 
 data = dict(
-    num_classes=8,
+    num_classes=9,
     ignore_index=-1,
     names=[
         "Ground",
@@ -81,6 +81,7 @@ data = dict(
         "Fences",
         "Installation",
         "Building",
+        "Other",
     ],
     train=dict(
         type=dataset_type,

@@ -22,3 +22,7 @@ from .point_group import *
 # Pretraining
 from .masked_scene_contrast import *
 from .point_prompt_training import *
+
+# KPConvX
+from .kpconvx import *
+from .kpnext import *
