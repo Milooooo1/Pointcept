@@ -44,6 +44,8 @@ class Collect(object):
         for key, value in self.offset_keys.items():
             data[key] = torch.tensor([data_dict[value].shape[0]])
         for name, keys in self.kwargs.items():
+            if isinstance(keys, str):
+                keys = [keys]
             name = name.replace("_keys", "")
             assert isinstance(keys, Sequence)
             data[name] = torch.cat([data_dict[key].float() for key in keys], dim=1)
