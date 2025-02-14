@@ -1,8 +1,8 @@
 _base_ = ["../_base_/default_runtime.py"]
 
 # misc custom setting
-batch_size = 12  # bs: total bs in all gpus
-num_worker = 24
+batch_size = 2  # bs: total bs in all gpus
+num_worker = 1
 mix_prob = 0.8
 empty_cache = False
 enable_amp = True
@@ -10,7 +10,7 @@ enable_amp = True
 # model settings
 model = dict(
     type="DefaultSegmentorV2",
-    num_classes=8,
+    num_classes=10,
     backbone_out_channels=64,
     backbone=dict(
         type="PT-v3m1",
@@ -69,7 +69,7 @@ dataset_type = "Rail3DDataset"
 data_root = "data/rail3d"
 
 data = dict(
-    num_classes=9,
+    num_classes=10,
     ignore_index=-1,
     names=[
         "Ground",
