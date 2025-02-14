@@ -100,7 +100,7 @@ data = dict(
             # dict(type="RandomShift", shift=[0.2, 0.2, 0.2]),
             dict(type="RandomFlip", p=0.5),
             dict(type="RandomJitter", sigma=0.005, clip=0.02),
-            dict(type="ElasticDistortion", distortion_params=[[0.2, 0.4], [0.8, 1.6]]),
+            # dict(type="ElasticDistortion", distortion_params=[[0.2, 0.4], [0.8, 1.6]]),
             # dict(type="ChromaticAutoContrast", p=0.2, blend_factor=None),
             # dict(type="ChromaticTranslation", p=0.95, ratio=0.05),
             # dict(type="ChromaticJitter", p=0.95, std=0.05),
